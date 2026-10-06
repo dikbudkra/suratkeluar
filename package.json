@@ -1,0 +1,16 @@
+{
+  "name": "e-agenda-smp",
+  "version": "1.0.0",
+  "description": "E-Agenda Bidang SMP Karanganyar",
+  "scripts": {
+    "build": "npm install"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.0",
+    "@capacitor/cli": "^6.0.0"
+  }
+}
