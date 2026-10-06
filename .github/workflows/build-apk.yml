@@ -1,0 +1,47 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch: # Mengaktifkan tombol "Run workflow" manual
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Tarik Kode dari Repositori
+      uses: actions/checkout@v4
+
+    - name: Siapkan Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Siapkan Java (JDK 17)
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
+    - name: Instal Pustaka dan Siapkan Folder Web
+      run: |
+        npm install
+        mkdir -p www
+        echo "<html><body>Memuat E-Agenda...</body></html>" > www/index.html
+
+    - name: Bangun Proyek Android & Ikon
+      run: |
+        npx cap add android
+        npx capacitor-assets generate
+        npx cap sync android
+
+    - name: Kompilasi (Render) APK
+      run: |
+        cd android
+        chmod +x gradlew
+        ./gradlew assembleDebug
+
+    - name: Simpan Hasil APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: E-Agenda-SMP-APK
+        path: android/app/build/outputs/apk/debug/app-debug.apk
