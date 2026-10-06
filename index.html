@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>E-Agenda | Bidang SMP</title>
+    
+    <!-- Favicon Logo Karanganyar -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/d/1e1LH5ZgYyLjclSNXwMAU5Zy_PKiju5z-" type="image/png">
+    
+    <style>
+        /* Mengatur agar layar penuh, tanpa garis tepi, dan warna dasar sama dengan tema aplikasi */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Mencegah double scrollbar */
+            background-color: #0f172a; /* Warna background dark-bg aplikasi Anda */
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* Desain Iframe layar penuh */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Teks loading di belakang iframe (terlihat sesaat saat GAS sedang dimuat) */
+        .loading-teks {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0ea5e9;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: pulse 1.5s infinite;
+            z-index: 1;
+            text-align: center;
+        }
+        .loading-teks img {
+            height: 80px;
+            margin-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animasi loading dan Logo Karanganyar di latar belakang -->
+    <div class="loading-teks">
+        <img src="https://lh3.googleusercontent.com/d/1e1LH5ZgYyLjclSNXwMAU5Zy_PKiju5z-" alt="Logo">
+        <br>MEMUAT SISTEM...
+    </div>
+
+    <!-- BINGKAI APLIKASI GAS -->
+    <!-- PENTING: Ganti atribut src="..." di bawah ini dengan URL Web App Google Apps Script Anda yang sudah di-Deploy -->
+    
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbwUn4fyuHg-jFXylMYuoqLWq-TGopxK0laE8DAXIOS1yqGa0WEGq0XuvUyiRjnSqXYgEg/exec" 
+        title="E-Agenda Surat Keluar Bidang SMP"
+        allowfullscreen>
+    </iframe>
+
+</body>
+</html>
