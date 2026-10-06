@@ -1,6 +1,6 @@
 {
   "appId": "com.dikbudkra.eagenda",
-  "appName": "E-Agenda SMP",
+  "appName": "E-Agenda",
   "webDir": "www",
   "bundledWebRuntime": false,
   "server": {
