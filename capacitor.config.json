@@ -1,0 +1,10 @@
+{
+  "appId": "com.dikbudkra.eagenda",
+  "appName": "E-Agenda SMP",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://dikbudkra.github.io/suratkeluar/",
+    "cleartext": true
+  }
+}
